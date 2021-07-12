@@ -12,8 +12,8 @@ RUN apt-get update && \
 #			nvidia-cuda-toolkit
 
 #RUN conda install cudatoolkit=10.2 \
-RUN conda install cudatoolkit=10.1 \
-				  cudatoolkit-dev=10.1\
+RUN conda install cudatoolkit=11.2 \
+				  cudatoolkit-dev=11.2\
 				  cudnn \
 				  nccl \
 				  -y
