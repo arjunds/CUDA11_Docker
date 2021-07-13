@@ -34,13 +34,6 @@ RUN pip install --no-cache-dir  datascience \
 RUN pip install torch==1.5.0+cu101 torchvision==0.6.0+cu101 pytorch-ignite -f https://download.pytorch.org/whl/torch_stable.html;
 #RUN conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
 
-RUN	chown -R 1000:1000 /home/jovyan
-
-COPY ./tests/ /usr/share/datahub/tests/scipy-ml-notebook
-RUN chmod -R +x /usr/share/datahub/tests/scipy-ml-notebook && \
-    chown -R 1000:1000 /home/jovyan && \
-	chmod +x /run_jupyter.sh
-
 RUN ln -s /usr/local/nvidia/bin/nvidia-smi /opt/conda/bin/nvidia-smi
 
 USER $NB_UID:$NB_GID
